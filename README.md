@@ -18,7 +18,6 @@ Launches the test runner in the interactive watch mode.<br>
 *TODO*
 
 ## Demo
-*TODO*
-Visit [<todo>.surge.sh](<todo>.surge.sh)
+Visit: [http://preybird-react.surge.sh/](http://preybird-react.surge.sh/)
 
 
