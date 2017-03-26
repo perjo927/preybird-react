@@ -3,8 +3,13 @@
 ## About
 This is a React web application listing series fetched from an API.
 
+## Getting started
+> git clone https://github.com/perjo927/preybird-react.git
+
+> yarn
+
 ## Scripts
-You can use Yarn or NPM, exchange the **npm** commands with **yarn** and vice versa.
+You can use [Yarn](https://yarnpkg.com) or [NPM](https://www.npmjs.com/), exchange the **npm** commands with **yarn** and vice versa.
 
 ### `npm start`
 Runs the app in the development mode.<br>
