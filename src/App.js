@@ -12,6 +12,8 @@ class App extends Component {
           <h1>perplay</h1>
         </div>
           List of movies
+
+        <footer></footer>
       </div>
     );
   }

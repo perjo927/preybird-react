@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="70.000000pt" height="70.000000pt" viewBox="0 0 70.000000 70.000000"
+ width="35.000000pt" height="35.000000pt" viewBox="0 0 70.000000 70.000000"
  preserveAspectRatio="xMidYMid meet">
 
 <defs>
@@ -10,9 +10,9 @@
                     x1="0%" y1="0%"
                     x2="0%" y2="100%"
                     spreadMethod="pad" 
-                    gradientTransform="rotate(45)">
-        <stop offset="0%" stop-color="deeppink" />
-        <stop offset="50%" stop-color="red" />
+                    gradientTransform="rotate(20)">
+        <stop offset="0%" stop-color="#ba2e8a" />
+        <stop offset="50%" stop-color="#e51c20" />
     </linearGradient>
 </defs>
 

@@ -1,13 +1,21 @@
 @font-face {
-  font-family: 'mtg';
+  font-family: 'mtg-reg';
   src: url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Regular.eot");
   src: local("\263A"), url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Regular.woff") format("woff"), url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Regular.ttf") format("truetype"), url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Regular.svg") format("svg");
   font-weight: normal;
   font-style: normal; 
 }
 
+@font-face {
+  font-family: 'mtg-light';
+  src: url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Light.eot");
+  src: local("\263A"), url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Light.woff") format("woff"), url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Light.ttf") format("truetype"), url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal; 
+}
+
 .App {
-  font-family: mtg, sans-serif;
+  font-family: mtg-reg;
 }
 
 .App-header {
@@ -15,18 +23,21 @@
   align-items: center;
   justify-content: flex-start;  
 
-  padding-left: 20px;
-  
-  height: 135px;
+  box-sizing: border-box;
 
-  background-color: #222;
-  color: white;
+  padding-left: 70px;
+  
+  height: 66px;
+
+  background-color: #212d33;
+  color: #fbfdfd;
+  border-top: 1px solid #3d4348;
 }
 
 .App-logo {
   margin: 0 5px;
   border-radius: 50%;  
-  background-color: white;
+  background-color: #fbfdfd;
   
   animation: spin 1.5s linear;
 }
@@ -34,10 +45,24 @@
 .App-header h1 {
   padding-left: 10px;
   padding-bottom: 10px;
-  font-size: 70px;      
+  
+  font-family: mtg-light;
+  font-size: 35px;      
+
   animation: slide-in 1.5s ease-in;
 }
 
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 44px;
+  width: 100%;
+  overflow:hidden;
+  
+  background-color: #212d33;
+  
+}
 
 
 /* TODO: SASS Mixin*/
