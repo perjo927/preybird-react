@@ -5,8 +5,19 @@
  width="70.000000pt" height="70.000000pt" viewBox="0 0 70.000000 70.000000"
  preserveAspectRatio="xMidYMid meet">
 
+<defs>
+    <linearGradient id="gradient"                     
+                    x1="0%" y1="0%"
+                    x2="0%" y2="100%"
+                    spreadMethod="pad" 
+                    gradientTransform="rotate(45)">
+        <stop offset="0%" stop-color="deeppink" />
+        <stop offset="50%" stop-color="red" />
+    </linearGradient>
+</defs>
+
 <g transform="translate(0.000000,70.000000) scale(0.100000,-0.100000)"
-fill="#ff0080" stroke="none">
+fill="url(#gradient)" stroke="none">
 <path class="a" d="M228 685 c-20 -7 -53 -25 -73 -38 l-37 -25 114 -61 c62 -34 146 -78
 185 -98 l73 -38 0 -75 0 -75 -185 -99 -186 -99 36 -24 c56 -38 111 -53 196
 -53 147 0 257 68 321 197 29 59 32 75 32 153 0 78 -3 94 -32 153 -40 80 -112

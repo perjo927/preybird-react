@@ -3,40 +3,59 @@
   src: url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Regular.eot");
   src: local("\263A"), url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Regular.woff") format("woff"), url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Regular.ttf") format("truetype"), url("https://assets.viaplay.tv/fonts/mtg-sans/MTGSans-Regular.svg") format("svg");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal; 
+}
 
 .App {
   font-family: mtg, sans-serif;
 }
 
-.App-logo {
-  background-color: white;
-  border-radius: 50%;
-  animation: App-logo-spin 1s linear;
-  margin: 0 5px;
-}
-
-
-
 .App-header {
   display: flex;
   align-items: center;
   justify-content: flex-start;  
+
+  padding-left: 20px;
+  
+  height: 135px;
+
   background-color: #222;
-  padding: 20px;
   color: white;
-  font-size: 75px;
+}
+
+.App-logo {
+  margin: 0 5px;
+  border-radius: 50%;  
+  background-color: white;
+  
+  animation: spin 1.5s linear;
+}
+
+.App-header h1 {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-size: 70px;      
+  animation: slide-in 1.5s ease-in;
 }
 
 
-.App-header span {
-}
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(350deg); }
+/* TODO: SASS Mixin*/
+@keyframes spin {
+  from { transform: rotate(300deg); }
   to { transform: rotate(360deg); }
+}
+
+@keyframes slide-in {
+  0% { 
+    opacity: 0;
+    letter-spacing: -50px;
+  }
+  50% { 
+    opacity: 0;    
+  }
+  100% { 
+    opacity: 1;
+    letter-spacing: 0px;
+  }
 }

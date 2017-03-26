@@ -9,11 +9,9 @@ class App extends Component {
         <div className="App-header">
           <object type="image/svg+xml" data={logo} className="App-logo">
           </object>
-          <span>preybirdplay</span>
+          <h1>perplay</h1>
         </div>
-        <p className="App-intro">
           List of movies
-        </p>
       </div>
     );
   }
