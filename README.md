@@ -11,15 +11,15 @@ This is a React web application listing series fetched from an API.
 ## Scripts
 You can use [Yarn](https://yarnpkg.com) or [NPM](https://www.npmjs.com/), exchange the **npm** commands with **yarn** and vice versa.
 
-### `npm start`
+### `yarn start`
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
-### `npm test`
+### `yarn test`
 Launches the test runner in the interactive watch mode.<br>
 
-### `npm run e2e`
+### `yarn e2e`
 *TODO*
 
 ## Demo
