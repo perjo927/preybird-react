@@ -4,7 +4,8 @@ import './GridView.css';
 class GridView extends Component {
   render() {
     return (
-      <div className="Grid-view">        
+      <div className="Grid-view">
+        {this.props.children}
       </div>
     );
   }

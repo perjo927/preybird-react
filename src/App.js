@@ -4,6 +4,8 @@ import ContentCard from './components/ContentCard';
 import logo from './assets/logo.svg';
 import './App.css';
 
+// TODO: Mock api data and import from movie-list-service
+
 class App extends Component {
   render() {
     return (
@@ -13,17 +15,15 @@ class App extends Component {
           </object>
           <h1>perplay</h1>
         </header>
-          
-          <main>
-            List of movies
 
-            <GridView>
-              <ContentCard>                
-              </ContentCard>
-            </GridView>
-
-          </main>
+        <main>          
           
+          <GridView>   
+            <ContentCard img="http://placehold.it/350x150"></ContentCard>   
+          </GridView>
+
+        </main>
+
         <footer></footer>
       </div>
     );
