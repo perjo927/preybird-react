@@ -1,14 +1,16 @@
 @import 'assets/keyframes';
 @import 'assets/theme';
+@import 'assets/media';
 
 .App {
   font-family: $primary-font-family;
 }
 
-.App-header {
+header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;  
+  justify-content: center;  
+  @include break-at(wide-screens) { justify-content: flex-start; }  
 
   box-sizing: border-box;
 
@@ -19,24 +21,25 @@
   background-color: $secondary-background-color;
   color: $primary-font-color;
   border-top: 1px solid $primary-border-color;
-}
 
-.App-logo {
-  margin: 0 5px;
-  border-radius: 50%;  
-  background-color: $tertiary-background-color;
-  
-  animation: spin 1.5s linear;
-}
+  h1 {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    
+    font-family: $secondary-font-family;
+    font-size: 35px;      
 
-.App-header h1 {
-  padding-left: 10px;
-  padding-bottom: 10px;
-  
-  font-family: $secondary-font-family;
-  font-size: 35px;      
+    animation: slide-in 1.5s ease-in;
+    
+  }
 
-  animation: slide-in 1.5s ease-in;
+  .logo {
+    margin: 0 5px;
+    border-radius: 50%;  
+    background-color: $tertiary-background-color;
+    
+    animation: spin 1.5s linear;
+  }
 }
 
 footer {
