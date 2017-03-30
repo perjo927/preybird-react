@@ -6,7 +6,10 @@ class ContentCard extends Component {
   render() {
     return (           
       <div className="Content-card">
-        <img src="{this.props.img}" alt=""/>      
+        <picture>
+          {/*<source srcset="xyz-wide.png" media="(min-width: 1024px)"/>*/}
+          <img src="http://placehold.it/350x150" alt="TODO"/> 
+        </picture>                     
       </div>
     );
   }

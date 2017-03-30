@@ -17,11 +17,9 @@ class App extends Component {
         </header>
 
         <main>          
-          
           <GridView>   
             <ContentCard img="http://placehold.it/350x150"></ContentCard>   
           </GridView>
-
         </main>
 
         <footer></footer>
