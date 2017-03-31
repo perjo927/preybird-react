@@ -18,7 +18,13 @@ class App extends Component {
 
         <main>          
           <GridView>   
-            <ContentCard img="http://placehold.it/350x150"></ContentCard>   
+            <ContentCard className="col" img="http://placehold.it/350x150"></ContentCard> 
+            <ContentCard  className="col" img="http://placehold.it/350x150"></ContentCard>  
+            <ContentCard  className="col" img="http://placehold.it/350x150"></ContentCard>   
+
+            <ContentCard  className="col" img="http://placehold.it/350x150"></ContentCard> 
+            <ContentCard  className="col" img="http://placehold.it/350x150"></ContentCard>  
+            <ContentCard  className="col" img="http://placehold.it/350x150"></ContentCard>  
           </GridView>
         </main>
 

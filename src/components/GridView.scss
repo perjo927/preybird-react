@@ -1,5 +1,12 @@
 .Grid-view {
+    box-sizing: border-box;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
     // TODO: Media / element queries
+    & > * {
+         padding: 20px;
+         flex: 1 1 33%;
+     }
 }
