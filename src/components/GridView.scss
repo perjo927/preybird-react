@@ -1,0 +1,13 @@
+.Grid-view {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    // TODO: Media / element queries
+    // TODO: Fix trailing last image, stick to the left
+    & > * {
+         padding: 20px;
+         flex: 1 1 auto;
+     }
+}
