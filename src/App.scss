@@ -1,0 +1,57 @@
+@import 'assets/keyframes';
+@import 'assets/theme';
+@import 'assets/media';
+
+.App {
+  font-family: $primary-font-family;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  @include break-at(wide-screens) { justify-content: flex-start; }  
+
+  box-sizing: border-box;
+
+  padding-left: 70px;
+  
+  height: 70px;
+
+  background-color: $secondary-background-color;
+  color: $primary-font-color;
+  border-top: 1px solid $primary-border-color;
+
+  h1 {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    
+    font-family: $secondary-font-family;
+    font-size: 35px;      
+
+    animation: slide-in 1.5s ease-in;
+    
+  }
+
+  .logo {
+    margin: 0 5px;
+    border-radius: 50%;  
+    background-color: $tertiary-background-color;
+    
+    animation: spin 1.5s linear;
+  }
+}
+
+main {
+  min-height: calc(100vh - 115px);
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  height: 45px;
+  width: 100%;
+  overflow:hidden;
+  
+  background-color: $secondary-background-color;
+}
