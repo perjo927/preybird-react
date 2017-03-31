@@ -1,4 +1,4 @@
-export default MovieData = 
+export let MovieData = 
 {
   "type": "page",
   "pageType": "category",

@@ -16,7 +16,7 @@ header {
 
   padding-left: 70px;
   
-  height: 66px;
+  height: 70px;
 
   background-color: $secondary-background-color;
   color: $primary-font-color;
@@ -42,11 +42,14 @@ header {
   }
 }
 
+main {
+  min-height: calc(100vh - 115px);
+}
+
 footer {
-  position: absolute;
   left: 0;
   bottom: 0;
-  height: 44px;
+  height: 45px;
   width: 100%;
   overflow:hidden;
   
