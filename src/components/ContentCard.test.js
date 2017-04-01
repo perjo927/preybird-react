@@ -22,7 +22,9 @@ describe('As a developer I want my ContentCard component to show an image in var
       const card = shallow(<ContentCard srcS={'imgS'} srcL={'imgL'} title={'title'}></ContentCard>);
 
       test('Then the props must be set', () => {
-        expect(card.props().children.props.src).toEqual('imgS');          
+        expect(card.props().children.props.src).toEqual('imgS');
+        expect(card.props().children.props.alt).toEqual('title'); 
+         
       });
     });
   });
