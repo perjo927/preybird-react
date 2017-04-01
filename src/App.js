@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import GridView from './components/GridView';
 import ContentCard from './components/ContentCard';
+import PlayDataService from './services/PlayDataService'
 import logo from './assets/logo.svg';
 import './App.css';
-
-// TODO: movie-list-service
-// import * as movieData from './services/MockMovieData';
 
 class App extends Component {
 
@@ -15,17 +13,16 @@ class App extends Component {
     this.state = {
       playData: []
     };
+
+    this.playDataService = new PlayDataService(`https://content.viaplay.se/pc-se/serier/samtliga`);
+    this.getPlayData(this.playDataService);
   }
 
-  componentDidMount() {
-    // TODO ES6 async await
-    fetch(`https://content.viaplay.se/pc-se/serier/samtliga`)
-      .then(res => {
-        return res.json()
-      }).
-      then((data) => {
-        const extractedList = data._embedded['viaplay:blocks'][0]._embedded['viaplay:products']
-        const mappedData = this.mapPlayData(extractedList);
+  getPlayData(service) {
+    // TODO: Async await
+    service.get()
+      .then((data) => {
+        const mappedData = service.extractPlayData(data)
         this.setState({ "playData": mappedData });
       })
       .catch(err => {
@@ -33,26 +30,15 @@ class App extends Component {
       });
   }
 
-  mapPlayData(data) {
-    return data.map((d) => {
-      return {
-        "img": d.content.images.boxart.url,
-        "title": d._links.self.title,
-        "href": d._links.self.title
-      }
-    });
-  }
-
   render() {
 
     const playCards = this.state.playData.map((playItem) =>
-      // <img key="{movie.img}" src="{movie.img}" />
-      <div>        
+      <div>
         <h6>{playItem.title}</h6>
-        <ContentCard key="{index}" 
-                    img="{movie.img}" 
-                    title="{movie.title}">
-        </ContentCard>      
+        <ContentCard key="{index}"
+          img="{playItem.img}"
+          title="{playItem.title}">
+        </ContentCard>
       </div>
     );
 
@@ -66,9 +52,20 @@ class App extends Component {
 
         <main>
           <GridView>
-          {/*<div className="Grid-view">*/}
-          {playCards}
-          {/*</div>*/}
+            {/*<div className="Grid-view">*/}
+            {playCards}
+            {/*</div>*/}
+
+            {/*{this.state.playData.map((playItem) =>
+              <div>
+                <h6>{playItem.title}</h6>
+                <img src="{playItem.img}"/>
+                <ContentCard img="{playItem.img}"
+                  title="{playItem.title}">
+                </ContentCard>
+              </div>
+            )}*/}
+
           </GridView>
         </main>
 

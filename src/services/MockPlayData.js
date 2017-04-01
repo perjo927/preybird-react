@@ -1,5 +1,5 @@
 /* eslint-disable */
-export const MovieData =
+export const PlayData =
   {
     "type": "page",
     "pageType": "category",
