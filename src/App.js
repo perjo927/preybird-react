@@ -9,7 +9,35 @@ import * as movieData from './services/MockMovieData';
 
 class App extends Component {
 
-  getMovies(data) {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      playData: []
+    };
+  }
+
+  componentDidMount() {
+    // TODO ES6 async await
+    fetch(`https://content.viaplay.se/pc-se/serier/samtliga`)
+      .then(res => {
+        // console.log(res.json())
+        return res.json()
+      }).
+      then((data) => {
+        console.log(data)
+        const extractedList = data._embedded['viaplay:blocks'][0]._embedded['viaplay:products']
+        const mappedData = this.mapPlayData(extractedList);
+        this.setState({ "playData": mappedData });
+        console.log(this.state.playData);
+        
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
+  mapPlayData(data) {
     return data.map((d) => {
       return {
         "img": d.content.images.boxart.url,
@@ -24,14 +52,14 @@ class App extends Component {
     const data = movieData.MovieData._embedded['viaplay:blocks'][0]._embedded['viaplay:products'];
     // const d = data[0];
 
-    const movies = this.getMovies(data);
-    console.log(movies);
+    const movies = this.mapPlayData(data);
+    // console.log(movies);
 
     const movieCards = movies.map((movie) =>
       // <img key="{movie.img}" src="{movie.img}" />
       <div>        
         <h6>{movie.title}</h6>
-        <ContentCard key="{movie.img}" 
+        <ContentCard key="{index}" 
                     img="{movie.img}" 
                     title="{movie.title}">
         </ContentCard>      
