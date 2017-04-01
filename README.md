@@ -17,7 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 ### `yarn test`
-Launches the test runner in the interactive watch mode.<br>
+Launches the test runner in the interactive watch mode. Make to sure build before the tests are run.<br>
 
 ### `yarn e2e`
 *TODO*
@@ -25,4 +25,10 @@ Launches the test runner in the interactive watch mode.<br>
 ## Demo
 Visit: [http://perplay.surge.sh/](http://perplay.surge.sh/)
 
+## Design Decisions
+* Single Page, client-side only application
+* Mobile first, responsive design using flexbox, media and element queries
+* ES6 & Webpack
+* Unit tested using BDD
+* _TODO: E2E test using Selenium_
 

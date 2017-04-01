@@ -1,13 +1,18 @@
+@import '../assets/media';
+
 .Grid-view {
-    box-sizing: border-box;
     display: flex;
     justify-content: space-around;
+    @include break-at(small-to-medium-screens) { margin: 0 15vw; }  
     flex-wrap: wrap;
 
-    // TODO: Media / element queries
-    // TODO: Fix trailing last image, stick to the left
     & > * {
          padding: 20px;
          flex: 1 1 auto;
      }
+
+    &:after {
+        content: "";
+        flex: 1000;
+    }
 }
