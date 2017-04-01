@@ -21,13 +21,9 @@ class PlayDataService {
         });
     }
 
-    get() {
-        // TODO ES6 async await
-        return fetch(this.endpoint)
-            .then(res => {
-                return res.json()
-            })
-
+    async get() {
+        const res = await fetch(this.endpoint)
+        return res.json();
     }
 }
 
