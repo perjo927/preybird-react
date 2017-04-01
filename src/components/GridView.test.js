@@ -18,10 +18,11 @@ describe('As a developer I want my Gridview component to render child components
     });
 
 
-    describe('When it renders with child components', () => {
-      ReactDOM.render(<GridView><div></div></GridView>, div);
+    describe('When it renders with child components', () => {      
+      const grid = shallow(<GridView><div></div></GridView>);
 
-      test('Then the GridView must not crash', () => {
+      test('And the props.children must equal <div></div>', () => {
+          expect(grid.props().children.type).toEqual('div');          
       });
     });
   });

@@ -18,10 +18,11 @@ describe('As a developer I want my ContentCard component to show an image in var
     });
 
 
-    describe('When it renders with child components', () => {
-      ReactDOM.render(<ContentCard></ContentCard>, div);
+    describe('When it renders with props', () => {
+      const card = shallow(<ContentCard srcS={'imgS'} srcL={'imgL'} title={'title'}></ContentCard>);
 
-      test('Then the ContentCard must not crash', () => {
+      test('Then the props must be set', () => {
+        expect(card.props().children.props.src).toEqual('imgS');          
       });
     });
   });

@@ -13,9 +13,7 @@ header {
   @include break-at(wide-screens) { justify-content: flex-start; }  
 
   box-sizing: border-box;
-
   padding-left: 70px;
-  
   height: 70px;
 
   background-color: $secondary-background-color;
@@ -33,10 +31,9 @@ header {
   }
 
   .logo {
-    margin: 0 5px;
+    margin: 0 5px;   
     border-radius: 50%;  
-    background-color: $tertiary-background-color;
-    
+    background-color: $tertiary-background-color;    
     animation: spin 1.5s linear;
   }
 }

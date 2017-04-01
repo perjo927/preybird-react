@@ -19,25 +19,26 @@ class App extends Component {
     this.getPlayData(this.playDataService);
   }
 
-  getPlayData(service) {
-    // TODO: Async await
-    service.get()
-      .then((data) => {
-        const mappedData = service.extractPlayData(data)
-        this.setState({ "playData": mappedData });
-      })
-      .catch(err => {
-        console.error(err);
-      });
+  async getPlayData(service) {
+    let data;
+
+    try {
+      data = await service.get();
+    } catch (err) {
+      // console.error(err);
+    } finally {
+      const mappedData = service.extractPlayData(data)
+      this.setState({ "playData": mappedData });
+    }
   }
 
   getContentCards() {
     return this.state.playData.map((playItem) =>
-        <ContentCard key={playItem.title}
-          srcS={playItem.imgS}
-          srcL={playItem.imgL}
-          title={playItem.title}>
-        </ContentCard>
+      <ContentCard key={playItem.title}
+        srcS={playItem.imgS}
+        srcL={playItem.imgL}
+        title={playItem.title}>
+      </ContentCard>
     );
   }
 
@@ -45,7 +46,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <Logo src={logo}/>          
+          <Logo src={logo} />
           <h1>perplay</h1>
         </header>
 

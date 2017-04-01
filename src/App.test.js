@@ -18,7 +18,7 @@ describe('As a developer I want my App component to contain a Gridview with Cont
     });
 
     describe('When it renders with child components', () => {
-      // ReactDOM.render(<App />, div);
+      ReactDOM.render(<App />, div);
 
       test('Then the App must not crash', () => {
       });
