@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import './ContentCard.css';
 
 class ContentCard extends Component {
-
   render() {
-    return (           
-      <div className="Content-card">
-        <picture>
-          {/*<source srcset="xyz-wide.png" media="(min-width: 1024px)"/>*/}
-          <img src="http://placehold.it/350x150" alt="TODO"/> 
-        </picture>                     
+    // TODO: inject sizes
+    return (
+      <div className="Content-card">        
+          <img src={this.props.srcS}
+              srcSet={`${this.props.srcS} 240w, ${this.props.srcL} 480w`} 
+              sizes="(min-width: 500px) and (max-width: 650px) 480px, 240px"
+              alt={this.props.title} />
       </div>
     );
   }

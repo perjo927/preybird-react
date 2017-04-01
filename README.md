@@ -23,6 +23,6 @@ Launches the test runner in the interactive watch mode.<br>
 *TODO*
 
 ## Demo
-Visit: [http://preybird-react.surge.sh/](http://preybird-react.surge.sh/)
+Visit: [http://perplay.surge.sh/](http://perplay.surge.sh/)
 
 
