@@ -4,30 +4,45 @@ import ContentCard from './components/ContentCard';
 import logo from './assets/logo.svg';
 import './App.css';
 
-// TODO: Mock api data and import from movie-list-service
-// import MovieData from './services/MockMovieData';
+// TODO: movie-list-service
+import * as movieData from './services/MockMovieData';
 
 class App extends Component {
 
+  getMovies(data) {
+    return data.map((d) => {
+      return {
+        "img": d.content.images.boxart.url,
+        "title": d._links.self.title,
+        "href": d._links.self.title
+      }
+    });
+  }
+
   render() {
 
-    const movies = [
-      { "img": "http://placehold.it/350x150" },
-      { "img": "http://placehold.it/350x150" },
-      { "img": "http://placehold.it/350x150" },
-      { "img": "http://placehold.it/350x150" },
-      { "img": "http://placehold.it/350x150" },
-      { "img": "http://placehold.it/350x150" },
-    ];
+    const data = movieData.MovieData._embedded['viaplay:blocks'][0]._embedded['viaplay:products'];
+    // const d = data[0];
+
+    const movies = this.getMovies(data);
+    console.log(movies);
 
     const movieCards = movies.map((movie) =>
-      <ContentCard img="{movie.img}"></ContentCard>      
+      // <img key="{movie.img}" src="{movie.img}" />
+      <div>        
+        <h6>{movie.title}</h6>
+        <ContentCard key="{movie.img}" 
+                    img="{movie.img}" 
+                    title="{movie.title}">
+        </ContentCard>      
+      </div>
+      
     );
 
     return (
+
       <div className="App">
         <header>
-          {/* TODO: Logo component */}
           <object type="image/svg+xml" data={logo} className="logo">
           </object>
           <h1>perplay</h1>
@@ -35,7 +50,9 @@ class App extends Component {
 
         <main>
           <GridView>
-            {movieCards}
+          {/*<div className="Grid-view">*/}
+          {movieCards}
+          {/*</div>*/}
           </GridView>
         </main>
 
