@@ -1,41 +1,60 @@
 import React, { Component } from 'react';
-import GridView from './components/GridView';
-import ContentCard from './components/ContentCard';
-import logo from './assets/logo.svg';
-import './App.css';
 
-// TODO: Mock api data and import from movie-list-service
-// import MovieData from './services/MockMovieData';
+import ContentCard from './components/ContentCard';
+import GridView from './components/GridView';
+import Logo from './components/Logo';
+
+import logo from './assets/logo.svg';
+
+import PlayDataService from './services/PlayDataService'
+import './App.css';
 
 class App extends Component {
 
-  render() {
+  constructor(props) {
+    super(props);
 
-    const movies = [
-      { "img": "http://placehold.it/350x150" },
-      { "img": "http://placehold.it/350x150" },
-      { "img": "http://placehold.it/350x150" },
-      { "img": "http://placehold.it/350x150" },
-      { "img": "http://placehold.it/350x150" },
-      { "img": "http://placehold.it/350x150" },
-    ];
+    this.state = {
+      playData: []
+    };
 
-    const movieCards = movies.map((movie) =>
-      <ContentCard img="{movie.img}"></ContentCard>      
+    this.playDataService = new PlayDataService(`https://content.viaplay.se/pc-se/serier/samtliga`);
+    this.getPlayData(this.playDataService);
+  }
+
+  getPlayData(service) {
+    // TODO: Async await
+    service.get()
+      .then((data) => {
+        const mappedData = service.extractPlayData(data)
+        this.setState({ "playData": mappedData });
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
+  getContentCards() {
+    return this.state.playData.map((playItem) =>
+        <ContentCard key={playItem.img}
+          srcS={playItem.imgS}
+          srcL={playItem.imgL}
+          title={playItem.title}>
+        </ContentCard>
     );
+  }
 
+  render() {
     return (
       <div className="App">
         <header>
-          {/* TODO: Logo component */}
-          <object type="image/svg+xml" data={logo} className="logo">
-          </object>
+          <Logo src={logo}/>          
           <h1>perplay</h1>
         </header>
 
         <main>
           <GridView>
-            {movieCards}
+            {this.getContentCards()}
           </GridView>
         </main>
 
