@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import GridView from './components/GridView';
+
 import ContentCard from './components/ContentCard';
-import PlayDataService from './services/PlayDataService'
+import GridView from './components/GridView';
+import Logo from './components/Logo';
+
 import logo from './assets/logo.svg';
+
+import PlayDataService from './services/PlayDataService'
 import './App.css';
 
 class App extends Component {
@@ -30,42 +34,27 @@ class App extends Component {
       });
   }
 
-  render() {
-
-    const playCards = this.state.playData.map((playItem) =>
-      <div>
-        <h6>{playItem.title}</h6>
-        <ContentCard key="{index}"
-          img="{playItem.img}"
-          title="{playItem.title}">
+  getContentCards() {
+    return this.state.playData.map((playItem) =>
+        <ContentCard key={playItem.img}
+          srcS={playItem.imgS}
+          srcL={playItem.imgL}
+          title={playItem.title}>
         </ContentCard>
-      </div>
     );
+  }
 
+  render() {
     return (
       <div className="App">
         <header>
-          <object type="image/svg+xml" data={logo} className="logo">
-          </object>
+          <Logo src={logo}/>          
           <h1>perplay</h1>
         </header>
 
         <main>
           <GridView>
-            {/*<div className="Grid-view">*/}
-            {playCards}
-            {/*</div>*/}
-
-            {/*{this.state.playData.map((playItem) =>
-              <div>
-                <h6>{playItem.title}</h6>
-                <img src="{playItem.img}"/>
-                <ContentCard img="{playItem.img}"
-                  title="{playItem.title}">
-                </ContentCard>
-              </div>
-            )}*/}
-
+            {this.getContentCards()}
           </GridView>
         </main>
 

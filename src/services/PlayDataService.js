@@ -1,5 +1,6 @@
 class PlayDataService {
 
+    // TODO: Get sizes
     constructor(endpoint) {
         this.endpoint = endpoint;
     }
@@ -12,7 +13,8 @@ class PlayDataService {
     mapPlayData(data) {
         return data.map((d) => {
             return {
-                "img": d.content.images.boxart.url,
+                "imgL": d.content.images.landscape.url.concat("&width=480&height=270"),
+                "imgS": d.content.images.landscape.url.concat("&width=240&height=135"),
                 "title": d._links.self.title,
                 "href": d._links.self.title
             }
