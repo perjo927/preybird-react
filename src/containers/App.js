@@ -1,10 +1,10 @@
 import './App.css';
-import ContentCard from './components/ContentCard';
-import GridView from './components/GridView';
-import Logo from './components/Logo';
-import logo from './assets/logo.svg';
+import ContentCard from '../components/ContentCard';
+import GridView from '../components/GridView';
+import Logo from '../components/Logo';
+import logo from '../assets/logo.svg';
 import React, { Component } from 'react';
-import PlayDataService from './services/PlayDataService'
+import PlayDataService from '../services/PlayDataService'
 
 class App extends Component {
 
@@ -34,7 +34,7 @@ class App extends Component {
 
   getContentCards() {
     return this.state.playData.map((playItem) =>
-      <ContentCard key={playItem.title}
+      <ContentCard key={playItem.imgS}
         srcS={playItem.imgS}
         srcL={playItem.imgL}
         title={playItem.title}>
