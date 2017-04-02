@@ -20,7 +20,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Launches the test runner in the interactive watch mode. Make to sure build before the tests are run.<br>
 
 ### `yarn e2e`
-*TODO*
+*WIP*
+> webdriver-manager update
+
+> webdriver-manager start
+
+> protractor ./src/e2e/conf.js
+
 
 ## Demo
 Visit: [http://perplay.surge.sh/](http://perplay.surge.sh/)
