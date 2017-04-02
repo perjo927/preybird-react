@@ -1,15 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes  } from 'react';
 import './ContentCard.css';
 
 class ContentCard extends Component {
+
+  static propTypes = {
+    srcS: PropTypes.string.isRequired,
+    srcL: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    sizes: PropTypes.string.isRequired
+  }
+
   render() {
-    // TODO: inject sizes
+    const { srcS, srcL, sizes, title } = this.props
+
     return (
       <div className="Content-card">        
-          <img src={this.props.srcS}
+          <img src={srcS}
               srcSet={`${this.props.srcS} 240w, ${this.props.srcL} 480w`} 
-              sizes="(min-width: 500px) and (max-width: 650px) 480px, 240px"
-              alt={this.props.title} />
+              sizes={sizes}
+              alt={title} />
       </div>
     );
   }

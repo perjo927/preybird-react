@@ -11,7 +11,7 @@ describe('As a developer I want my ContentCard component to show an image in var
 
 
  describe('When it renders without child components', () => {
-      shallow(<ContentCard></ContentCard>);
+      shallow(<ContentCard srcS={'imgS'} srcL={'imgL'} sizes={'sizes'} title={'title'}/>);
 
       test('Then the GridView must not crash', () => {
       });
@@ -19,7 +19,7 @@ describe('As a developer I want my ContentCard component to show an image in var
 
 
     describe('When it renders with props', () => {
-      const card = shallow(<ContentCard srcS={'imgS'} srcL={'imgL'} title={'title'}></ContentCard>);
+      const card = shallow(<ContentCard srcS={'imgS'} srcL={'imgL'} sizes={'sizes'} title={'title'} />);
 
       test('Then the props must be set', () => {
         expect(card.props().children.props.src).toEqual('imgS');

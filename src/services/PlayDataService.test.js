@@ -3,7 +3,6 @@ import * as mockData from './MockPlayData';
 
 describe('As a developer I want my PlayDataService extract and map Play data', () => {
     const service = new PlayDataService("foo");
-    console.log(mockData)
 
     describe('Given that there is a method for extracting data', () => {
         describe('When I call it with the desired data', () => {
