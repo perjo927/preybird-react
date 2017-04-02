@@ -3,6 +3,11 @@
         to { transform: rotate(360deg); }
 }
 
+@keyframes spin360 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 @keyframes slide-in {
   0% { 
     opacity: 0;
@@ -16,3 +21,4 @@
     letter-spacing: 0px;
   }
 }
+
