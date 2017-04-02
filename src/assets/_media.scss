@@ -1,6 +1,8 @@
 $small-screen: 320px;
 $medium-screen: 640px;
 $wide-screen: 960px;
+$gigantic-screen: 1600px;
+
 
 @mixin break-at($media) {
   @if $media == small-screens {
@@ -20,6 +22,11 @@ $wide-screen: 960px;
   }
   @else if $media == wide-screens {
     @media only screen and (min-width: $wide-screen) { 
+      @content; 
+    }
+  }
+  @else if $media == humongous-screens {
+    @media only screen and (min-width: $gigantic-screen) { 
       @content; 
     }
   }
