@@ -1,0 +1,15 @@
+@import '../assets/keyframes';
+@import '../assets/theme';
+
+.Spinner {
+    margin: 25vh auto;
+
+    border: 7px solid $primary-background-color;     
+    border-top: 15px solid $primary-border-color; 
+    border-radius: 50%;
+
+    width: 100px;
+    height: 100px;
+
+    animation: spin360 1s linear infinite;
+}

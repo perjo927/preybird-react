@@ -1,6 +1,7 @@
+import { ImgSmall, ImgLarge } from '../assets/media'
+
 class PlayDataService {
 
-    // TODO: Get sizes
     constructor(endpoint) {
         this.endpoint = endpoint;
     }
@@ -13,8 +14,8 @@ class PlayDataService {
     mapPlayData(data) {
         return data.map((d) => {
             return {
-                "imgL": d.content.images.landscape.url.concat("&width=480&height=270"),
-                "imgS": d.content.images.landscape.url.concat("&width=240&height=135"),
+                "imgL": d.content.images.landscape.url.concat(`&width=${ImgLarge.w}&height=${ImgLarge.h}`),
+                "imgS": d.content.images.landscape.url.concat(`&width=${ImgSmall.w}&height=${ImgSmall.h}`),
                 "title": d._links.self.title,
                 "href": d._links.self.title
             }
