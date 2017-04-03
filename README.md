@@ -17,9 +17,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 ### `yarn test`
-Launches the test runner in the interactive watch mode. Make to sure build before the tests are run.<br>
+Launches the test runner in the interactive watch mode. Make to sure **build** before the tests are run.<br>
 
-### `yarn e2e`
+### ~~`yarn e2e`~~
 *WIP*
 > webdriver-manager update
 
@@ -29,7 +29,7 @@ Launches the test runner in the interactive watch mode. Make to sure build befor
 
 
 ## Demo
-Visit: [http://perplay.surge.sh/](http://perplay.surge.sh/)
+Visit: **[http://perplay.surge.sh/](http://perplay.surge.sh/)**
 
 ## Design Decisions
 * MVP feature-based (Gitflow) development, small releases
